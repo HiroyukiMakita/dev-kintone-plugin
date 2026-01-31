@@ -1,0 +1,19 @@
+# https://pnpm.io/settings#strictdepbuilds
+# allowBuilds で管理されていないライフサイクルスクリプトを持つ依存関係がある場合はインストールが失敗するようにする
+strictDepBuilds: true
+
+# https://pnpm.io/settings#allowbuilds
+# ビルドを許可するパッケージのリスト
+# allowBuilds:
+
+# https://pnpm.io/settings#trustpolic
+# パッケージの信頼レベルがダウングレードされるのを防ぐ
+trustPolicy: no-downgrade
+
+# https://pnpm.io/settings#trustpolicyexclude
+# trustPolicy の例外リスト
+# trustPolicyExclude:
+
+# https://pnpm.io/settings#blockexoticsubdeps
+# npm レジストリ以外からインストールされたサブ依存関係をブロックする
+blockExoticSubdeps: true
