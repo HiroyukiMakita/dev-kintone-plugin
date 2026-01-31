@@ -1,0 +1,109 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-01-02T14:39:32Z",
+      "resolved": "github:NixOS/nixpkgs/16c7794d0a28b5a37904d55bcca36003b9109aaa?lastModified=1767364772&narHash=sha256-fFUnEYMla8b7UKjijLnMe%2BoVFOz6HjijGGNS1l7dYaQ%3D"
+    },
+    "github:anomalyco/opencode/v1.1.34": {
+      "last_modified": "2026-01-23T07:27:35Z",
+      "resolved": "github:anomalyco/opencode/c130dd425a32fe1c1cd3747ea6565b0e6bf50100?lastModified=1769153255&narHash=sha256-ardM8zEJWvTvsFMQZWivjGPB2uIqFw6QPAzrRjAHQKY%3D"
+    },
+    "uv@latest": {
+      "last_modified": "2026-01-23T17:20:52Z",
+      "resolved": "github:NixOS/nixpkgs/a1bab9e494f5f4939442a57a58d0449a109593fe#uv",
+      "source": "devbox-search",
+      "version": "0.9.26",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/qd7fbw1h6xa5zj91cnzvd5nz366435qw-uv-0.9.26",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/qd7fbw1h6xa5zj91cnzvd5nz366435qw-uv-0.9.26"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zdxw032an2c9y93ypdap8vj27bvf1cfi-uv-0.9.26",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zdxw032an2c9y93ypdap8vj27bvf1cfi-uv-0.9.26"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/23rqzlfw13aqrpb14wnvkvw3fhshmwp4-uv-0.9.26",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/23rqzlfw13aqrpb14wnvkvw3fhshmwp4-uv-0.9.26"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/v90dllnlqmz8gv77wsdn5aak1ic8qm33-uv-0.9.26",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/v90dllnlqmz8gv77wsdn5aak1ic8qm33-uv-0.9.26"
+        }
+      }
+    },
+    "volta@latest": {
+      "last_modified": "2026-01-23T17:20:52Z",
+      "resolved": "github:NixOS/nixpkgs/a1bab9e494f5f4939442a57a58d0449a109593fe#volta",
+      "source": "devbox-search",
+      "version": "2.0.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zhy5a1ws4k6h8wz76yc0v36iz0vvfdd9-volta-2.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zhy5a1ws4k6h8wz76yc0v36iz0vvfdd9-volta-2.0.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/0n9r3i9jgl2kp97d96mxkkl0lgssd2l3-volta-2.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/0n9r3i9jgl2kp97d96mxkkl0lgssd2l3-volta-2.0.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/l8vzj5ckzxccqpz7fdkm939y8s63csli-volta-2.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/l8vzj5ckzxccqpz7fdkm939y8s63csli-volta-2.0.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yd10rcb4fih26b7g2gm5cx53my4i1jmw-volta-2.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/yd10rcb4fih26b7g2gm5cx53my4i1jmw-volta-2.0.2"
+        }
+      }
+    }
+  }
+}
