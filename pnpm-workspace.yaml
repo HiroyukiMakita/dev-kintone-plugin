@@ -17,3 +17,10 @@ trustPolicy: no-downgrade
 # https://pnpm.io/settings#blockexoticsubdeps
 # npm レジストリ以外からインストールされたサブ依存関係をブロックする
 blockExoticSubdeps: true
+
+# https://pnpm.io/settings#ignoredbuiltdependencies
+# ビルドを無視する依存関係のリスト
+ignoredBuiltDependencies:
+  - core-js
+  - puppeteer
+  - unrs-resolver
