@@ -17,7 +17,7 @@
     "lint": "run-p lint:*",
     "lint:eslint": "eslint . --max-warnings 0",
     "lint:prettier": "prettier --check '**/*.{json,json5,md,yml,yaml}' --cache",
-    "start": "node scripts/npm-start.js",
+    "start": "node scripts/npm-start.cjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "upload": "kintone-plugin-uploader dist/plugin.zip --waiting-dialog-ms 3000 --watch"
   },
