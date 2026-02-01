@@ -10,7 +10,10 @@
   },
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
+      "echo 'Welcome to Kintone Plugin Development Environment!'",
+      "echo 'Loading environment variables from $DEVBOX_PROJECT_ROOT/.env if present...'",
+      "if [ -f $DEVBOX_PROJECT_ROOT/.env ]; then set -a; source $DEVBOX_PROJECT_ROOT/.env; set +a; fi",
+      "echo 'Development environment ready!'"
     ],
     "scripts": {
       "test": [
