@@ -10,7 +10,9 @@
   "scripts": {
     "build": "run-s build:js build:package",
     "build:js": "rsbuild build",
-    "build:package": "kintone-plugin-packer --ppk private.ppk --out dist/plugin.zip lib",
+    "build:package": "if [ -d dist ] && find dist -maxdepth 1 -type f -printf '%f\\n' | grep -qE '\\.ppk$'; then pnpm run build:plugin:ppk; else pnpm run build:plugin; fi",
+    "build:plugin": "kintone-plugin-packer --out dist/plugin.zip lib",
+    "build:plugin:ppk": "KEY=./dist/$(basename *.ppk); kintone-plugin-packer --ppk $KEY lib",
     "fix": "run-p fix:*",
     "fix:eslint": "run-s 'lint:eslint -- --fix'",
     "fix:prettier": "run-s 'lint:prettier -- --write'",
