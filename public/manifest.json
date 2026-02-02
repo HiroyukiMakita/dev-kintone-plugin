@@ -17,31 +17,17 @@
     "ja": "https://github.com/tasshi-me/kintone-plugin-template"
   },
   "desktop": {
-    "js": [
-      "js/desktop.js"
-    ],
-    "css": [
-      "css/desktop.css"
-    ]
+    "js": ["js/desktop.js"],
+    "css": ["css/desktop.css"]
   },
   "mobile": {
-    "js": [
-      "js/mobile.js"
-    ],
-    "css": [
-      "css/mobile.css"
-    ]
+    "js": ["js/mobile.js"],
+    "css": ["css/mobile.css"]
   },
   "config": {
     "html": "html/config.html",
-    "js": [
-      "js/config.js"
-    ],
-    "css": [
-      "css/config.css"
-    ],
-    "required_params": [
-      "message"
-    ]
+    "js": ["js/config.js"],
+    "css": ["css/config.css"],
+    "required_params": ["message"]
   }
 }
