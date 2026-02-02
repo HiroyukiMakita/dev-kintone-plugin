@@ -5,7 +5,7 @@ import eslintPluginPackageJson from "eslint-plugin-package-json";
 /** @type {import("eslint").Linter.Config[]} */
 export default [
   {
-    ignores: ["lib", "dist"],
+    ignores: ["lib", "dist", "node_modules", ".vscode", ".devbox"],
   },
   ...presetsTypescriptPrettier,
   {
