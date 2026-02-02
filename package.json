@@ -10,18 +10,24 @@
   "scripts": {
     "build": "run-s build:js build:package",
     "build:js": "rsbuild build",
-    "build:package": "if [ -d dist ] && find dist -maxdepth 1 -type f -printf '%f\\n' | grep -qE '\\.ppk$'; then pnpm run build:plugin:ppk; else pnpm run build:plugin; fi",
-    "build:plugin": "kintone-plugin-packer --out dist/plugin.zip lib",
-    "build:plugin:ppk": "KEY=./dist/$(basename *.ppk); kintone-plugin-packer --ppk $KEY lib",
+    "build:js:watch": "rsbuild build --watch",
+    "build:package": "wait-on lib/manifest.json && if [ -d dist ] && find dist -maxdepth 1 -type f -printf '%f\\n' | grep -qE '\\.ppk$'; then pnpm run package:ppk; else pnpm run package; fi",
+    "build:package:watch": "wait-on lib/manifest.json && if [ -d dist ] && find dist -maxdepth 1 -type f -printf '%f\\n' | grep -qE '\\.ppk$'; then pnpm run package:ppk:watch; else pnpm run package:watch; fi",
+    "cpx:public": "cpx \"public/**\" lib -w",
     "fix": "run-p fix:*",
     "fix:eslint": "run-s 'lint:eslint -- --fix'",
     "fix:prettier": "run-s 'lint:prettier -- --write'",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint . --max-warnings 0",
     "lint:prettier": "prettier --check '**/*.{json,json5,md,yml,yaml}' --cache",
-    "start": "node scripts/npm-start.cjs",
+    "package": "kintone-plugin-packer --out dist/plugin.zip lib",
+    "package:ppk": "KEY=./dist/$(basename *.ppk); kintone-plugin-packer --out dist/plugin.zip --ppk $KEY lib",
+    "package:ppk:watch": "KEY=./dist/$(basename *.ppk); kintone-plugin-packer --watch --out dist/plugin.zip --ppk $KEY lib",
+    "package:watch": "kintone-plugin-packer --watch --out dist/plugin.zip lib",
+    "start": "run-p build:js:watch cpx:public build:package:watch upload:watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "upload": "kintone-plugin-uploader dist/plugin.zip --waiting-dialog-ms 3000 --watch"
+    "upload": "kintone-plugin-uploader --waiting-dialog-ms 3000 dist/plugin.zip",
+    "upload:watch": "kintone-plugin-uploader --waiting-dialog-ms 3000 --watch dist/plugin.zip"
   },
   "dependencies": {
     "@kintone/rest-api-client": "^5.7.4",
@@ -38,11 +44,13 @@
     "@rsbuild/plugin-type-check": "^1.2.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "cpx": "^1.5.0",
     "eslint": "^9.29.0",
     "eslint-plugin-package-json": "^0.34.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wait-on": "^9.0.3"
   },
   "volta": {
     "node": "24.13.0",
