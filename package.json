@@ -27,7 +27,7 @@
     "start": "run-p build:js:watch cpx:public build:package:watch upload:watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "upload": "kintone-plugin-uploader --waiting-dialog-ms 3000 dist/plugin.zip",
-    "upload:watch": "kintone-plugin-uploader --waiting-dialog-ms 3000 --watch dist/plugin.zip"
+    "upload:watch": "kintone-plugin-uploader  --waiting-dialog-ms 3000 --watch dist/plugin.zip"
   },
   "dependencies": {
     "@kintone/rest-api-client": "^5.7.4",

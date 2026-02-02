@@ -6,10 +6,13 @@
     "github:anomalyco/opencode/v1.1.34"
   ],
   "env": {
-    "VOLTA_FEATURE_PNPM": "1"
+    "VOLTA_FEATURE_PNPM": "1",
+    "PUPPETEER_CACHE_DIR": "$DEVBOX_PROJECT_ROOT/.cache/puppeteer"
   },
   "shell": {
     "init_hook": [
+      "mkdir -p \"$PUPPETEER_CACHE_DIR\"",
+      "pnpm dlx puppeteer@23.11.1 browsers install chrome || true",
       "echo 'Welcome to Kintone Plugin Development Environment!'",
       "echo 'Loading environment variables from $DEVBOX_PROJECT_ROOT/.env if present...'",
       "if [ -f $DEVBOX_PROJECT_ROOT/.env ]; then set -a; source $DEVBOX_PROJECT_ROOT/.env; set +a; fi",
