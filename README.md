@@ -1,4 +1,4 @@
-# dev-kintone-plugin-plugin
+# dev-kintone-plugin
 
 kintone プラグインの開発環境、テンプレート
 
