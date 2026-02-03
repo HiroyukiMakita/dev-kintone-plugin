@@ -7,7 +7,8 @@
   ],
   "env": {
     "VOLTA_FEATURE_PNPM": "1",
-    "PUPPETEER_CACHE_DIR": "$DEVBOX_PROJECT_ROOT/.cache/puppeteer"
+    "PUPPETEER_CACHE_DIR": "$DEVBOX_PROJECT_ROOT/.cache/puppeteer",
+    "OPENCODE_CONFIG": "$DEVBOX_PROJECT_ROOT/opencode_project.jsonc"
   },
   "shell": {
     "init_hook": [

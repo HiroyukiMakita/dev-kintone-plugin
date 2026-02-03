@@ -30,3 +30,8 @@ npm-debug.log*
 
 ## Cache
 .cache/
+
+## Opencode
+.agents/
+opencode.json*
+!opencode.json*.example

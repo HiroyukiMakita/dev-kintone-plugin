@@ -1,0 +1,8 @@
+/**
+ * OpenCode 設定は opencode_project.jsonc で設定してありますが、このファイルでオーバーライド可能です
+ * 詳細: https://opencode.ai/docs/config
+ */
+{
+  "$schema": "https://opencode.ai/config.json",
+  // "model": "github-copilot/gpt-4o",
+}
