@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "Pimzino.spec-workflow-mcp",
+    "davidanson.vscode-markdownlint",
+    "rvest.vs-code-prettier-eslint"
+  ]
+}
