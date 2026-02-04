@@ -3,7 +3,8 @@
   "packages": [
     "volta@latest",
     "uv@latest",
-    "github:anomalyco/opencode/v1.1.51"
+    "github:anomalyco/opencode/v1.1.51",
+    "gh@latest"
   ],
   "env": {
     "VOLTA_FEATURE_PNPM":  "1",
