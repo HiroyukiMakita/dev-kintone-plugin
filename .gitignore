@@ -35,3 +35,6 @@ npm-debug.log*
 .agents/
 opencode.json*
 !opencode.json*.example
+
+## Skills
+*.skill
