@@ -36,7 +36,7 @@ jobs:
       # 3. docs/wiki/** の内容を Wiki リポジトリにコピー
       - name: Copy Updated Docs to Wiki
         run: |
-          rsync -a --delete ${{ steps.repository.outputs.name }}/${{ env.REPO_WIKI_PATH }} wiki/
+          rsync -a --delete --exclude='.git' "${{ steps.repository.outputs.name }}/${{ env.REPO_WIKI_PATH }}/" wiki/
 
       # 4. Wiki リポジトリの変更をコミット＆プッシュ
       - name: Commit and Push Changes to Wiki
