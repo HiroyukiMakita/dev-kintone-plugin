@@ -1,0 +1,54 @@
+name: Update Wiki
+
+permissions:
+  contents: write
+
+env:
+  REPO_WIKI_PATH: docs/wiki
+  MASTER_BRANCH: master
+
+on:
+  push:
+    paths:
+      - "docs/wiki/**"
+
+jobs:
+  wiki-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - id: repository
+        run: echo "name=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_OUTPUT
+
+      # 1. メインリポジトリ（owner/repo）を clone
+      - name: Checkout Main Repository
+        uses: actions/checkout@v4
+        with:
+          path: "${{ steps.repository.outputs.name }}"
+
+      # 2. Wiki リポジトリをクローン（別ディレクトリにクローン）
+      - name: Checkout Wiki Repository
+        uses: actions/checkout@v4
+        with:
+          repository: "${{ github.repository }}.wiki"
+          path: wiki
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. docs/wiki/** の内容を Wiki リポジトリにコピー
+      - name: Copy Updated Docs to Wiki
+        run: |
+          SRC="${{ steps.repository.outputs.name }}/${{ env.REPO_WIKI_PATH }}"
+          if [ -d "$SRC" ]; then
+            rsync -a --delete "$SRC/" wiki/
+          else
+            echo "No docs to copy: $SRC"
+          fi
+
+      # 4. Wiki リポジトリの変更をコミット＆プッシュ
+      - name: Commit and Push Changes to Wiki
+        run: |
+          cd wiki
+          git config --global user.email "bot@example.com"
+          git config --global user.name "bot"
+          git add -A
+          git commit -m '🤖: Update wiki by bot' || echo "No changes to commit"
+          git push origin HEAD:${{ env.MASTER_BRANCH }}
