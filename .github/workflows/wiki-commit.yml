@@ -37,6 +37,7 @@ jobs:
       - name: Copy Updated Docs to Wiki
         run: |
           SRC="${{ steps.repository.outputs.name }}/${{ env.REPO_WIKI_PATH }}"
+          echo "$SRC"
           if [ -d "$SRC" ]; then
             rsync -a --delete "$SRC/" wiki/
           else
