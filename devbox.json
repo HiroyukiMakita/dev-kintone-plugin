@@ -3,12 +3,12 @@
   "packages": [
     "volta@latest",
     "uv@latest",
-    "github:anomalyco/opencode/v1.1.34"
+    "github:anomalyco/opencode/v1.1.51"
   ],
   "env": {
-    "VOLTA_FEATURE_PNPM": "1",
+    "VOLTA_FEATURE_PNPM":  "1",
     "PUPPETEER_CACHE_DIR": "$DEVBOX_PROJECT_ROOT/.cache/puppeteer",
-    "OPENCODE_CONFIG": "$DEVBOX_PROJECT_ROOT/opencode_project.jsonc"
+    "OPENCODE_CONFIG":     "$DEVBOX_PROJECT_ROOT/opencode_project.jsonc"
   },
   "shell": {
     "init_hook": [
