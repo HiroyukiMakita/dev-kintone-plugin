@@ -24,6 +24,7 @@
     "package:create:watch": "kintone-plugin-packer --watch --out dist/plugin.zip lib",
     "package:update": "KEY=./dist/$(basename *.ppk); kintone-plugin-packer --out dist/plugin.zip --ppk $KEY lib",
     "package:update:watch": "KEY=./dist/$(basename *.ppk); kintone-plugin-packer --watch --out dist/plugin.zip --ppk $KEY lib",
+    "skills": "pnpm dlx skills",
     "start": "run-p build:js:watch cpx:public build:package:watch upload:watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "upload": "kintone-plugin-uploader --waiting-dialog-ms 3000 dist/plugin.zip",
