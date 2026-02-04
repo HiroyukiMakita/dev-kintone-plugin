@@ -11,6 +11,7 @@ on:
   push:
     paths:
       - "docs/wiki/**"
+      - ".github/workflows/wiki-commit.yml"
 
 jobs:
   wiki-commit:
