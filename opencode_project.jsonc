@@ -306,6 +306,7 @@
           "vercel-composition-patterns": "allow",
           "vercel-react-best-practices": "allow",
           "web-design-guidelines": "allow",
+          "web-design-reviewer": "allow",
           "pr-creator": "allow",
         },
       },
