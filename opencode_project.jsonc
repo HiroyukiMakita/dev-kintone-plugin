@@ -219,6 +219,20 @@
       },
     },
     /*******************************************
+     * サブエージェント：kintone 操作用
+     *******************************************/
+    "kintone-agent": {
+      "description": "Kintone 操作用",
+      "mode": "subagent",
+      "model": "antigravity-gemini-3-pro",
+      "prompt": "You are a kintone assistant. Use minimal privileges. Only call kintone MCP when necessary.",
+      "tools": {
+        "kintone": true,
+        "write": true,
+        "edit": true,
+      },
+    },
+    /*******************************************
      * サブエージェント：推論用
      *******************************************/
     "deep-thinker": {
