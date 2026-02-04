@@ -51,4 +51,4 @@ jobs:
           git config --global user.name "bot"
           git add -A
           git commit -m '🤖: Update wiki by bot' || echo "No changes to commit"
-          git push origin HEAD:${{ env.MASTER_BRANCH }}
+          git push origin ${{ env.MASTER_BRANCH }}
