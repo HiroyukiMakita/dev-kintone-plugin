@@ -221,7 +221,7 @@
   // "model": "google/gemini-3-pro-preview",
   // "model": "openrouter/glm-4.7",
   // "model": "zen/glm-4.7",
-  "model": "google/antigravity-gemini-3-flash", // Google 系のデフォルトモデルはこれじゃないと Antigravity 経由で安定して動かないっぽい？
+  "model": "google/antigravity-gemini-3-pro",
   // "model": "github-copilot/claude-sonnet-4.5",
   // "model": "github-copilot/claude-opus-4.5",
   // "model": "github-copilot/claude-haiku-4.5",
@@ -235,7 +235,19 @@
   "agent": {
     "plan": {
       // デフォルトの Plan エージェントのモデルをオーバーライド
-      "model": "google/antigravity-gemini-3-flash",
+      "model": "google/antigravity-gemini-3-pro",
+      "permission": {
+        "write": "allow",
+        "edit": "allow",
+        "skill": {
+          "*": "deny",
+          "kintone-best-practice": "allow",
+          "vercel-composition-patterns": "allow",
+          "vercel-react-best-practices": "allow",
+          "web-design-guidelines": "allow",
+          "docs-writer": "allow",
+        },
+      },
       // "model": "openrouter/glm-4.7",
     },
     "general": {
@@ -262,10 +274,13 @@
       "mode": "primary",
       "model": "google/antigravity-gemini-3-pro",
       "prompt": "You are a skill creator agent. Focus on modular, reusable, and well-documented skills.",
-      "tools": {
-        "skill-creator": true,
-        "write": true,
-        "edit": true,
+      "permission": {
+        "write": "allow",
+        "edit": "allow",
+        "skill": {
+          "*": "deny",
+          "skill-creator": "allow",
+        },
       },
     },
     /*******************************************
@@ -281,9 +296,18 @@
       // "model": "zen/glm-4.7",
       "model": "google/antigravity-gemini-3-pro",
       "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
-      "tools": {
-        "write": false,
-        "edit": false,
+      "permission": {
+        "write": "deny",
+        "edit": "deny",
+        "skill": {
+          "*": "deny",
+          "code-reviewer": "allow",
+          "kintone-best-practice": "allow",
+          "vercel-composition-patterns": "allow",
+          "vercel-react-best-practices": "allow",
+          "web-design-guidelines": "allow",
+          "pr-creator": "allow",
+        },
       },
     },
     /*******************************************
@@ -294,10 +318,15 @@
       "mode": "subagent",
       "model": "google/antigravity-gemini-3-pro",
       "prompt": "You are a kintone assistant. Use minimal privileges. Only call kintone MCP when necessary.",
-      "tools": {
-        "kintone": true,
-        "write": true,
-        "edit": true,
+      "permission": {
+        "kintone": "allow",
+        "write": "allow",
+        "edit": "allow",
+        "skill": {
+          "*": "deny",
+          "kintone-agent": "allow",
+          "kintone-best-practice": "allow",
+        }
       },
     },
     /*******************************************
@@ -320,9 +349,12 @@
       "model": "google/antigravity-claude-opus-4-5",
       // "model": "openrouter/glm-4.7",
       "prompt": "You are a super coder. You must NOT perform large refactors or multi-file edits unless explicitly instructed. Prefer minimal diffs.",
-      "tools": {
-        "write": true,
-        "edit": true,
+      "permission": {
+        "write": "allow",
+        "edit": "allow",
+        "skill": {
+          "*": "allow",
+        },
       },
     },
   },
