@@ -59,7 +59,8 @@ kintone プラグインの開発環境、テンプレート
 
 `pnpm start`や`pnpm upload`を使用する場合は、以下の環境変数を設定してください。
 
-※ `.env.example` をコピーして `.env` を作成してください。
+※ `.env.example` をコピーして `.env` を作成してください。  
+※ 環境変数を変更した後は devbox shell に入り直す必要があります。
 
 ```bash
 KINTONE_BASE_URL=https://your-subdomain.cybozu.com
