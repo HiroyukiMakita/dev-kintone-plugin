@@ -14,7 +14,11 @@
   "shell": {
     "init_hook": [
       "mkdir -p \"$PUPPETEER_CACHE_DIR\"",
-      "pnpm dlx puppeteer@23.11.1 browsers install chrome || true",
+      "CHROME_HEADLESS_SHELL_PATH=\"$(pnpm dlx puppeteer browsers install chrome-headless-shell 2>/dev/null | tail -n 1 | awk '{print $2}')\"",
+      "if [ -z \"$CHROME_HEADLESS_SHELL_PATH\" ]; then CHROME_HEADLESS_SHELL_PATH=\"$(find \"$PUPPETEER_CACHE_DIR\" -type f -name 'chrome-headless-shell' -perm -u+x 2>/dev/null | head -n 1)\"; fi",
+      "export PUPPETEER_EXECUTABLE_PATH=\"$CHROME_HEADLESS_SHELL_PATH\"",
+      "echo \"PUPPETEER_EXECUTABLE_PATH=$PUPPETEER_EXECUTABLE_PATH\"",
+      "pnpm dlx puppeteer browsers install chrome-headless-shell",
       "echo 'Welcome to Kintone Plugin Development Environment!'",
       "echo 'Loading environment variables from $DEVBOX_PROJECT_ROOT/.env if present...'",
       "if [ -f $DEVBOX_PROJECT_ROOT/.env ]; then set -a; . $DEVBOX_PROJECT_ROOT/.env; set +a; fi",
