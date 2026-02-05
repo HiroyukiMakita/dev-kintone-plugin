@@ -25,7 +25,9 @@
       "echo 'Development environment ready!'"
     ],
     "scripts": {
-      "test": ["echo \"Error: no test specified\" && exit 1"]
+      "spec": [
+        "volta run --node latest pnpm dlx @pimzino/spec-workflow-mcp@latest --dashboard"
+      ]
     }
   }
 }
