@@ -17,7 +17,7 @@
       "pnpm dlx puppeteer@23.11.1 browsers install chrome || true",
       "echo 'Welcome to Kintone Plugin Development Environment!'",
       "echo 'Loading environment variables from $DEVBOX_PROJECT_ROOT/.env if present...'",
-      "if [ -f $DEVBOX_PROJECT_ROOT/.env ]; then set -a; source $DEVBOX_PROJECT_ROOT/.env; set +a; fi",
+      "if [ -f $DEVBOX_PROJECT_ROOT/.env ]; then set -a; . $DEVBOX_PROJECT_ROOT/.env; set +a; fi",
       "echo 'Development environment ready!'"
     ],
     "scripts": {
