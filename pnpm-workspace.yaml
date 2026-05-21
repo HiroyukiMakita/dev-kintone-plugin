@@ -24,3 +24,8 @@ ignoredBuiltDependencies:
   - core-js
   - puppeteer
   - unrs-resolver
+
+allowBuilds:
+  core-js: false
+  puppeteer: false
+  unrs-resolver: false
