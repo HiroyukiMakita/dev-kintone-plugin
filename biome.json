@@ -3,7 +3,12 @@
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["!**/*lock.json", "!**/tsconfig.json", "!**/jsconfig.json"]
+    "includes": [
+      "src/**/*",
+      "!**/*lock.json",
+      "!**/tsconfig.json",
+      "!**/jsconfig.json"
+    ]
   },
   "formatter": {
     "enabled": true,
