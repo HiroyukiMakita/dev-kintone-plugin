@@ -1,8 +1,16 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
 	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
-	"files": { "ignoreUnknown": false },
-	"formatter": { "enabled": true, "indentStyle": "tab" },
+	"files": {
+		"ignoreUnknown": false,
+		"includes": ["!**/*lock.json", "!**/tsconfig.json", "!**/jsconfig.json"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineEnding": "lf"
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -337,5 +345,14 @@
 	"assist": {
 		"enabled": true,
 		"actions": { "source": { "organizeImports": "on" } }
+	},
+	"json": {
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": true
+		},
+		"formatter": {
+			"trailingCommas": "none"
+		}
 	}
 }
