@@ -17,6 +17,7 @@
     "fix": "run-p fix:*",
     "fix:format": "biome format --write",
     "fix:lint": "biome lint --write",
+    "fix-all": "biome lint --write --unsafe",
     "lint": "run-p lint:*",
     "lint:format": "biome format",
     "lint:lint": "biome lint",
