@@ -1,14 +1,14 @@
-export type PluginConfig = {
+export interface PluginConfig {
   message?: string;
-};
-export type PluginProxyConfig = {
+}
+export interface PluginProxyConfig {
   headers: {
     value1?: string;
   };
   data: {
     value1?: string;
   };
-};
+}
 
 export const getPluginConfig = (pluginId: string): PluginConfig => {
   return kintone.plugin.app.getConfig(pluginId);

@@ -2,9 +2,9 @@ import { getPluginConfig, setPluginConfig } from "../helpers/plugin.ts";
 import type { MouseEventHandler } from "react";
 import { useState } from "react";
 
-type Props = {
+interface Props {
   pluginId: string;
-};
+}
 
 function App({ pluginId }: Props) {
   const config = getPluginConfig(pluginId);
