@@ -18,7 +18,7 @@
     "fix:format": "biome format --write",
     "fix:lint": "biome lint --write",
     "fix-all": "biome check --write --unsafe",
-    "lint": "run-p lint:*",
+    "lint": "biome check",
     "lint:format": "biome format",
     "lint:lint": "biome lint",
     "package:create": "kintone-plugin-packer --out dist/plugin.zip lib",
