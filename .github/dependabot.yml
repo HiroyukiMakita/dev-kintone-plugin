@@ -1,0 +1,29 @@
+version: 2
+updates:
+  ######################################################################################################################
+  # npm
+  ######################################################################################################################
+  - package-ecosystem: "npm"
+    directory: "/"
+    # Dependabot の更新チェック頻度。
+    # ここでは週1回だけ依存関係の更新 PR を作成する。
+    schedule:
+      interval: "weekly"
+    # 公開直後の npm パッケージをすぐに取り込まないための待機期間。
+    # サプライチェーン攻撃では、悪意あるバージョンが公開後すぐに削除・検知されることが多いため、
+    # 14 日待ってから Dependabot が更新 PR を作るようにする。
+    cooldown:
+      default-days: 14
+    # major で package.json の範囲変更が必要な場合も PR を作れるようにする
+    versioning-strategy: increase-if-necessary
+    # グループ化：バージョンタイプ別に分類してPRをまとめることで、ライブラリ単位ではなく、バージョンタイプごとでPRを管理します
+    groups:
+      # patchとminorをひとまとめにする
+      minor-patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+    # major は ignore しない。
+    # groups に major を含めていないので、依存関係ごとに個別PRになる。
