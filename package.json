@@ -40,7 +40,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
     "@kintone/dts-gen": "^8.1.2",
-    "@kintone/plugin-packer": "^8.2.1",
+    "@kintone/plugin-packer": "^9.1.1",
     "@kintone/plugin-uploader": "^9.1.5",
     "@rsbuild/core": "^1.3.22",
     "@rsbuild/plugin-react": "^1.3.2",
