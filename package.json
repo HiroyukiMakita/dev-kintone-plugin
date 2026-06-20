@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
+    "@kintone/cli": "^1.20.0",
     "@kintone/dts-gen": "^8.1.2",
     "@kintone/plugin-packer": "^8.2.1",
     "@kintone/plugin-uploader": "^9.1.5",

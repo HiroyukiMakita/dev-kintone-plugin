@@ -12,7 +12,8 @@ trustPolicy: no-downgrade
 
 # https://pnpm.io/settings#trustpolicyexclude
 # trustPolicy の例外リスト
-# trustPolicyExclude:
+trustPolicyExclude:
+  - "chokidar@4.0.3"
 
 # https://pnpm.io/settings#blockexoticsubdeps
 # npm レジストリ以外からインストールされたサブ依存関係をブロックする
