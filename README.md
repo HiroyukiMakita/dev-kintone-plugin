@@ -27,7 +27,7 @@ kintone プラグインの開発環境、テンプレート
 - **エントリーポイント分離**: デスクトップ、モバイル、設定画面を個別に管理
 - **コード品質管理**: Biome による静的解析とフォーマット
 - **自動パッケージング**: kintone-plugin-packer によるプラグインパッケージの生成
-- **自動アップロード**: kintone-plugin-uploader による開発環境への自動アップロード
+- **自動アップロード**: cli-kintone plugin upload による開発環境への自動アップロード
 
 ## 必要要件
 
@@ -68,7 +68,8 @@ KINTONE_USERNAME=your-username
 KINTONE_PASSWORD=your-password
 ```
 
-詳細は[@kintone/plugin-uploader](https://github.com/kintone/js-sdk/tree/master/packages/plugin-uploader)のドキュメントを参照してください。
+[cli-kintone plugin upload](https://cli.kintone.dev/ja/guide/commands/plugin-upload/) に移行しましたが、
+[@kintone/plugin-uploader](https://github.com/kintone/js-sdk/tree/master/packages/plugin-uploader) に引き続き同じ環境変数で動く模様です。
 
 ## セットアップ
 
